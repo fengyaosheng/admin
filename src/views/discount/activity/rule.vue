@@ -47,7 +47,7 @@
         </el-form-item>
       </el-form>
     </el-dialog>
-    
+
     <h4>
       规则列表&nbsp;&nbsp;&nbsp;
       <el-button type="" size="mini" @click="showAddRule">添加规则</el-button>
@@ -107,7 +107,7 @@
         </el-form>
       </div>
     </el-dialog>
-    
+
     <h4>
       活动范围列表&nbsp;&nbsp;&nbsp;
       <el-button type="" size="mini" @click="showAddRange">添加活动范围</el-button>
@@ -142,13 +142,13 @@
 
       <el-table-column label="操作" width="200" align="center">
         <template slot-scope="scope">
-          <el-button type="danger" size="mini" icon="el-icon-delete" 
+          <el-button type="danger" size="mini" icon="el-icon-delete"
             @click="removeSkuDataById(scope.$index)"/>
         </template>
       </el-table-column>
     </el-table>
 
-    <el-dialog title="添加优惠券范围" :visible.sync="dialogCouponVisible" width="490px" 
+    <el-dialog title="添加优惠券范围" :visible.sync="dialogCouponVisible" width="490px"
       @close="dialogCouponVisible = false">
       <div style="margin-top: 20px;">
         <el-form :inline="true" class="demo-form-inline">
@@ -204,7 +204,7 @@
           <router-link :to="'/discount/coupon/rule/'+scope.row.id">
             <el-button size="mini">规则</el-button>
           </router-link>
-          <hint-button title="删除优惠卷" type="danger" size="mini" icon="el-icon-delete" 
+          <hint-button title="删除优惠卷" type="danger" size="mini" icon="el-icon-delete"
             @click="removeCouponDataById(scope.$index)"/>
         </template>
       </el-table-column>
@@ -367,14 +367,14 @@ export default {
       this.dialogRangVisible = false
     },
 
-    /* 
+    /*
     删除sku
     */
     removeSkuDataById(index) {
       this.skuInfoList.splice(index, 1)
     },
 
-    /* 
+    /*
     搜索优惠券范围
     */
     queryCouponSearch(queryString, cb) {
@@ -384,7 +384,7 @@ export default {
         })
     },
 
-    /* 
+    /*
     选择优惠项
     */
     selectCouponData(item) {
@@ -392,7 +392,7 @@ export default {
       this.dialogCouponVisible = false
     },
 
-    /* 
+    /*
     删除优惠券
     */
     removeCouponDataById(index) {

@@ -32,8 +32,8 @@
         <template slot-scope="{row}">
           {{ row.couponType == 'CASH' && row.benefitAmount ? '减金额' + row.benefitAmount + '元' :
               row.couponType == 'DISCOUNT' && row.benefitDiscount ? '打' + row.benefitDiscount + '折' :
-              row.couponType == 'FULL_REDUCTION' && row.conditionAmount ? '满' + row.conditionAmount + '元减' + row.benefitAmount + '元' : 
-              row.couponType == 'FULL_DISCOUNT' && row.conditionNum ? '满' + row.conditionNum + '件打' + row.benefitDiscount + '折' 
+              row.couponType == 'FULL_REDUCTION' && row.conditionAmount ? '满' + row.conditionAmount + '元减' + row.benefitAmount + '元' :
+              row.couponType == 'FULL_DISCOUNT' && row.conditionNum ? '满' + row.conditionNum + '件打' + row.benefitDiscount + '折'
                 : '未指定'}}
         </template>
       </el-table-column>
@@ -44,7 +44,7 @@
 
       <el-table-column label="操作" width="200" align="center" fixed="right">
         <template slot-scope="{row}">
-          <el-button type="primary" size="mini" icon="el-icon-edit" 
+          <el-button type="primary" size="mini" icon="el-icon-edit"
             @click="$router.push('/discount/coupon/edit/'+row.id)"></el-button>
           <el-button type="" size="mini" @click="$router.push('/discount/coupon/rule/'+row.id)">规则</el-button>
           <el-button type="danger" size="mini" icon="el-icon-delete" @click="removeDataById(row.id)"></el-button>
@@ -84,7 +84,7 @@ export default {
   },
 
   methods: {
-    /* 
+    /*
     当页码发生改变的时候
     */
     changeSize(size) {
@@ -92,7 +92,7 @@ export default {
       this.fetchData(1)
     },
 
-    /* 
+    /*
     异步获取分页列表数据显示
     */
     fetchData(page = 1) {
@@ -110,7 +110,7 @@ export default {
         })
     },
 
-    /* 
+    /*
     根据id删除一条数据
     */
     removeDataById(id) {
@@ -141,14 +141,14 @@ export default {
       })
     },
 
-    /* 
+    /*
     当表格复选框选项发生变化的时候触发
     */
     handleSelectionChange(selection) {
       this.multipleSelection = selection
     },
 
-    /* 
+    /*
     批量删除
     */
     removeRows() {

@@ -27,12 +27,5 @@ export const  jumpNative = (Obj, iosObj) =>{
       Obj = JSON.stringify(Obj);
       window.messageHandlers.jumpNative(Obj);
   }
-  if (util.channel() !== 'CBSAPP') {
-    window.location.href = url;
-   } else {
-    const Obj = {"androidLink": 'cbs.chaboshi.ui.app.WebNoActionBarActivity', "androidParam": {url: url, type: '1'}};
-                const iosObj = {"iosLink": 'MainWebV2ViewController', "iosParm": {url: url, type: '1'}};
-                util.jumpNative(Obj, iosObj);
-   }
 }
 
